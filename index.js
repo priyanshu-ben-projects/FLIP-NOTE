@@ -16,7 +16,7 @@ const __dirname = path.dirname(__filename);
 
 // Database Connection
 const connectDB = async () => {
-    await mongoose.connect("mongodb://127.0.0.1:27017/flipNote");
+    await mongoose.connect(process.env.MONGO_URI);
 };
 
 // const bookSchema = new mongoose.Schema({
