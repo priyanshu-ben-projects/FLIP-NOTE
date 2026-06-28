@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Home</title>
+</head>
+
+<body>
+    <video src="/videos/bg-vid.mp4" class="bg-vid" autoplay loop muted></video>
+    <header>
+
+
+        <img class="menu-icon" height="40" src="/images/menu.png" alt="">
+
+        <div class="site_logo">
+            <strong class="flip">FLIP</strong>
+            <strong class="note">NOTE</strong>
+        </div>
+
+        <nav class="navbar">
+            <ul class="nav-wrapper">
+                <li class="nav-item"><a href="#">HOME</a></li>
+                <li class="nav-item"><a href="#">FEATURES</a></li>
+                <li class="nav-item"><a href="#">ABOUT</a></li>
+                <li class="nav-item"><a href="#">CONTACT</a></li>
+            </ul>
+        </nav>
+
+        <div class="btns">
+            <button class="login-btn">Login</button>
+            <button class="signup-btn">Sign up</button>
+        </div>
+    </header>
+    <div class="spacer"></div>
+    <section class="hero">
+        <div class="hero-content">
+
+            <h1 id="typewriter">Built with simplicity in mind.</h1>
+
+            <h2>No clutter. Just your thoughts, organized.</h2>
+
+            <p>
+                Capture your ideas, organize your thoughts and access your <br>
+                notes anywhere. Fast, secure, and distraction-free.
+            </p>
+
+            <div class="hero-btns">
+                <button class="getstrt-btn">Get Started</button>
+                <button class="demo-btn">Demo <i class='bx bx-paper-plane'
+                        style='color:#ffffff'></i></box-icon></button>
+            </div>
+
+        </div>
+    </section>
+</body>
+<script>
+    const messages = [
+        "Capture Your Thoughts.",
+        "Organize Your Ideas.",
+        "Write Without Distractions.",
+        "Start Taking Notes Today."
+    ];
+
+    const element = document.getElementById("typewriter");
+
+    let messageIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function typeEffect() {
+        const current = messages[messageIndex];
+
+        if (!isDeleting) {
+            element.textContent = current.substring(0, charIndex++);
+        } else {
+            element.textContent = current.substring(0, charIndex--);
+        }
+
+        let speed = isDeleting ? 50 : 100;
+
+        if (!isDeleting && charIndex > current.length) {
+            speed = 1000;          // Pause after typing
+            isDeleting = true;
+        }
+
+        if (isDeleting && charIndex < 0) {
+            isDeleting = false;
+            messageIndex = (messageIndex + 1) % messages.length;
+            speed = 100;           // Pause before next message
+        }
+
+        setTimeout(typeEffect, speed);
+    }
+
+    typeEffect();
+</script>
+
+</html>

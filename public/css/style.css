@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Open+Sans:wght@300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --primary: #;
+    --light-text: #fff;
+    --accent: #ff751f;
+    --bg: #FBEFEF;
+    --transparent: #8b5e3c52;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+}
+
+body {
+    background: var(--bg);
+    min-height: 100dvh;
+}
+
+.bg-vid {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+header {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10px;
+    width: 98%;
+    max-width: 1500px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 25px;
+    background: var(--transparent);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+
+    z-index: 1000;
+}
+
+/* .spacer {
+    visibility: hidden;
+    height: 100px;
+} */
+
+.menu-icon {
+    display: none;
+}
+
+.site_logo {
+    line-height: .9;
+    color: #fff;
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+
+.flip {
+    background: linear-gradient(130deg,
+            #b92727,
+            #f8c881,
+            #f1d96c);
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.note {
+    font-style: italic;
+}
+
+.nav-wrapper {
+    font-family: Google Sans;
+    display: flex;
+    gap: 35px;
+    list-style: none;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, .8);
+    font-size: .95rem;
+    font-weight: 700;
+    transition: .3s;
+
+}
+
+.nav-item a:hover {
+    color: #fff;
+}
+
+.btns {
+    display: flex;
+    gap: 12px;
+}
+
+.login-btn,
+.signup-btn {
+    padding: 10px 35px;
+    border-radius: 7px;
+    font-size: .9rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+
+.login-btn {
+    background: none;
+    color: var(--light-text);
+    border: 1px solid rgba(255, 255, 255, .4);
+}
+
+.login-btn:hover {
+
+    background: rgba(255, 255, 255, .1);
+}
+
+.signup-btn {
+    background: #833AB4;
+    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(252, 176, 69, 1) 100%);
+    color: var(--light-text);
+    border: none;
+    font-weight: 600;
+}
+
+.signup-btn:hover {
+    background: #ffffff46;
+}
+
+
+.hero {
+    padding: 0px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100dvh;
+}
+
+.hero-content {
+    color: var(--light-text);
+    width: 80%;
+}
+
+
+.hero-content h1 {
+    color: var(--light-text);
+    font-size: clamp(1.8rem, calc(1rem + 5vw), 4.5rem);
+    line-height: 100%;
+
+}
+
+.hero-content h2 {
+    margin-top: 12px;
+    color: var(--accent);
+    font-size: clamp(1.2rem, 1rem + 1vw, 1.8rem);
+    line-height: 110%;
+}
+
+.hero-content p {
+    color: var(--light-text);
+    font-family: DM Sans;
+    padding: 3px;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.hero-btns button {
+    border: none;
+    color: var(--light-text);
+    border-radius: 6px;
+    padding: 9px 20px;
+    background: linear-gradient(135deg, #F97316 0%, #EC4899 100%);
+    font-size: .7rem;
+    border: 2px solid rgba(245, 222, 179, 0.648);
+    transition: .4s ease;
+}
+
+.hero-btns .demo-btn {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    background: none;
+    transition: .4s ease;
+}
+
+.demo-btn:hover {
+    background: #ffffff46;
+
+}
+
+
+.getstrt-btn:hover {
+    background: #ffffff46;
+}
+
+#typewriter::after {
+    content: "|";
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+
+
+
+
+@media screen and (max-width:1000px) {
+
+    .site_logo {
+        font-size: 1.5rem;
+    }
+
+    .navbar,
+    .btns {
+        display: none;
+    }
+
+
+    .menu-icon {
+        display: block;
+    }
+
+
+    header {
+        padding: 0px 60px;
+        justify-content: space-between;
+    }
+}
+
+
+
+@media screen and (max-width:600px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .navbar,
+    .btns {
+        display: none;
+    }
+
+    header {
+        padding: 0px 20px;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+
+    .hero-content p {
+        display: none;
+    }
+
+    .hero-content .demo-btn {
+        display: none;
+    }
+
+
+}
