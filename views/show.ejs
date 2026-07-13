@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/show.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show</title>
+</head>
+
+<body>
+
+    <%- include("partials/head") %>
+
+        <main>
+
+
+            <div class="notes-container">
+                <% notes.forEach(note=> { %> <article class="note">
+                        <header class="note-header">
+                            <h2>
+                                <%= note.title %>
+                            </h2>
+                            <% if (note.isPinned) { %> <span class="pin">📌</span>
+                                <% } %>
+                        </header>
+                        <section class="note-content">
+                            <p>
+                                <%= note.content %>
+                            </p>
+                        </section>
+                        <% if (note.tags.length> 0) { %> <section class="note-tags">
+                                <% note.tags.forEach(tag=> { %> <span class="tag">
+                                        <%= tag %>
+                                    </span>
+                                    <% }) %>
+                            </section>
+                            <% } %>
+                                <footer class="note-footer"> <small> Created: <%= note.createdAt.toLocaleDateString() %>
+                                    </small>
+                                    <div class="note-actions"> <!-- View --> <a href="/show/<%= note._id %>"> View </a>
+                                        <!-- Edit --> <a href="/edit/<%= note._id %>"> Edit </a> <!-- Delete -->
+                                        <form action="/show/delete<%= note._id %>?_method=DELETE" method="POST"> <button
+                                                type="submit"> Delete
+                                            </button> </form>
+                                    </div>
+                                </footer>
+                    </article>
+                    <% }) %>
+
+            </div>
+        </main>
+</body>
+
+</html>

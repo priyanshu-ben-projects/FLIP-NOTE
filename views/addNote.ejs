@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/addNote.css">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Add Note</title>
+</head>
+
+<body>
+    <%- include("partials/head.ejs") %>
+
+
+        <main>
+            <section class="note-form-container">
+
+                <form action="/show" method="POST" class="note-form">
+
+                    <div class="form-header">
+                        <h1>Create New Note</h1>
+                        <p>Capture your ideas, tasks and important information.</p>
+                    </div>
+
+
+                    <!-- Title -->
+                    <div class="form-group">
+
+                        <label for="title">
+                            Note Title
+                        </label>
+
+                        <input type="text" id="title" name="title" class="form-input" placeholder="Enter note title..."
+                            required>
+
+                    </div>
+
+
+                    <!-- Content -->
+                    <div class="form-group">
+
+                        <label for="content">
+                            Note Content
+                        </label>
+
+                        <textarea id="content" name="content" class="form-textarea" placeholder="Write your thoughts..."
+                            rows="8"></textarea>
+
+                    </div>
+
+
+                    <!-- Tags -->
+                    <div class="form-group">
+
+                        <label for="tags">
+                            Tags
+                        </label>
+
+                        <input type="text" id="tags" name="tags" class="form-input"
+                            placeholder="Example: React, Backend, DSA">
+
+                        <small class="input-hint">
+                            Separate multiple tags using commas
+                        </small>
+
+                    </div>
+
+
+                    <!-- Pin Note -->
+                    <div class="pin-option">
+
+                        <input type="checkbox" id="isPinned" name="isPinned">
+
+                        <label for="isPinned">
+                            Pin this note
+                        </label>
+
+                    </div>
+
+
+                    <!-- Actions -->
+                    <div class="form-actions">
+
+                        <a href="/show" class="btn btn-secondary">
+                            Cancel
+                        </a>
+
+
+                        <button type="submit" class="btn btn-primary">
+                            Create Note
+                        </button>
+
+                    </div>
+
+
+                </form>
+
+            </section>
+        </main>
+</body>
+
+</html>
